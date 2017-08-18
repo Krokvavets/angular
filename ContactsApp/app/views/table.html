@@ -1,33 +1,32 @@
-<div >
+<div>
     <table class="table" ng-model="contacts">
-    <thead>
-    <tr>
-    <th></th>
-    <th>firstName</th>
-    <th>lastName</th>
-    <th>DOB</th>
-    <th>phone</th>
-    </tr>
-    </thead>
-    <tr ng-repeat="contact in contacts">
-    <td><input type="checkbox" ng-model = "contact.deleteItem"></td>
-    <td>{{contact.firstName}}</td>
-    <td>{{contact.lastName}}</td>
-    <td>{{contact.DOB}}</td>
-    <td>{{contact.phone}}</td>
-    <td><input type="checkbox" ng-model="contact.favorite"/></td>
-    </tr>
+        <thead>
+            <tr>
+                <th></th>
+                <th>firstName</th>
+                <th>lastName</th>
+                <th>DOB</th>
+                <th>phone</th>
+            </tr>
+        </thead>
+        <tr ng-repeat="contact in contacts">
+            <td><input type="checkbox" ng-model="contact.deleteItem"></td>
+            <td>{{contact.firstName}}</td>
+            <td>{{contact.lastName}}</td>
+            <td>{{contact.DOB}}</td>
+            <td>{{contact.phone}}</td>
+            <td><input type="checkbox" ng-model="contact.favorite" /></td>
+            <td><button ng-click="gotoEdit(contact.id)" class="btn btn-default">Edit</button></td>
+        </tr>
     </table>
     <div class="form-inline">
-                <form class="form-group" action="#!create">
-                    <div class="col-md-offset-2 col-md-8">
-                        <button type="submit"  class="btn btn-default">Create</button>
-                    </div>
-                </form>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-8">
-                        <button  class="btn btn-default" ng-click="deleteContacts()">Delete</button>
-                    </div>
-                </div>
-                </div>
+        <div class="col-md-offset-2 col-md-8">
+            <button ng-click="gotoCreate()" class="btn btn-default">Create</button>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-8">
+                <button class="btn btn-default" ng-click="deleteContacts()">Remove</button>
+            </div>
+        </div>
     </div>
+</div>

@@ -1,19 +1,31 @@
-var contactsApp = angular.module('contactsApp', ["ngRoute"])
-.config(function($routeProvider){
-	$routeProvider.when('/table',
+var contactsApp = angular.module('contactsApp', ['ngRoute'])
+.config(function($routeProvider, $locationProvider){
+
+	$routeProvider.when('/contacts/table',
 	{
 		templateUrl : 'app/views/table.html',
 		controller : 'contactsController'
 	});
-	$routeProvider.when('/create',
+	$routeProvider.when('/contacts/create',
 	{
 		templateUrl : 'app/views/create.html',
-		controller : 'contactsController'
+		controller : 'createController'
 	});
-	$routeProvider.when('/save',
+	$routeProvider.when('/contacts/edit',
 	{
-		templateUrl : 'app/views/test.php',
-		controller : 'contactsController'
+		templateUrl : 'app/views/edit.html',
+		controller : 'editController'
 	});
-	$routeProvider.otherwise({redirectTo: '/table'});
+	$routeProvider.when('/contacts/favorite',
+	{
+		templateUrl : 'app/views/favorite.html',
+		controller : 'favoriteController'
+	});
+	$routeProvider.when('/contacts/search',
+	{
+		templateUrl : 'app/views/search.html',
+		controller : 'searchController'
+	});
+	$routeProvider.otherwise({redirectTo: '/contacts/table'});
+	$locationProvider.html5Mode(true);
 });

@@ -1,15 +1,24 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>
 <html ng-app="contactsApp">
+
 <head>
-<meta charset="utf-8">
-<link rel="stylesheet" href="/app/css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <base href="/" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/app/css/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-route.js"></script>
+    <script src="/app/js/app.js"></script>
+    <script src="/app/js/contactsService.js"></script>
+    <script src="/app/js/controllers/contactsController.js"></script>
+    <script src="/app/js/controllers/createController.js"></script>
+    <script src="/app/js/controllers/editController.js"></script>
+    <script src="/app/js/controllers/favoriteController.js"></script>
+    <script src="/app/js/controllers/searchController.js"></script>
 </head>
+
 <body>
-        <ng-view></ng-view>
-<script src="app/js/lib/angular.min.js"></script>
-<script src="app/js/lib/angular-route.min.js"></script>
-<script src="app/js/app.js"></script>
-<script src="app/js/contactsService.js"></script>
-<script src="app/js/controllers/contactsController.js"></script>
+    <a href="/contacts/table">All Contacts</a> <a href="/contacts/favorite">Favorote</a> <a href="/contacts/search">search</a>
+    <div ng-view></div>
 </body>
+
 </html>
